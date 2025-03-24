@@ -16,8 +16,6 @@ class Members{
 
     public:
 
-    virtual int getId() = 0;
-    virtual string getName() = 0;
     virtual void displayDetails() = 0;
     virtual void notificationDetails(string operation, string name) = 0;
 
@@ -51,14 +49,6 @@ public:
             cout << "\nBook name '" << name << "' removed from Library";
         } 
     }
-
-    int getId(){
-        return id;
-    }
-
-    string getName(){
-        return name;
-    }
 };
 
 // Faculty
@@ -81,14 +71,6 @@ public:
             cout << "\nBook name '" << name << "' removed from Library";
         } 
     }
-
-    int getId(){
-        return id;
-    }
-
-    string getName(){
-        return name;
-    }
 };
 
 // Librarian
@@ -110,14 +92,6 @@ public:
         if(operation == "remove"){
             cout << "\nBook name '" << name << "' removed from Library";
         } 
-    }
-
-    int getId(){
-        return id;
-    }
-
-    string getName(){
-        return name;
     }
 };
 
@@ -234,7 +208,7 @@ public:
     void unregisterMembers(Members* member){
 
         for(auto itr = members.begin(); itr != members.end();){
-            if(*itr == member){
+            if(**itr == *member){
                 members.erase(itr);
             }
             else{
@@ -308,7 +282,7 @@ int main(){
     lib->addBook(book1);
     lib->removeBook(book1);
 
-    // lib->un_registerMembers(m2);
+    // lib->unregisterMembers(m2);
     lib->displayMembers();
 
     return 0;
