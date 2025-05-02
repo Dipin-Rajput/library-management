@@ -3,10 +3,6 @@
 // # include <algorithm>
 using namespace std;
 
-// enum MembersType{
-//     STUDENT, FACULTY, LIBRARIAN
-// };
-
 class Members{
 
     protected:
